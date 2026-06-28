@@ -34,67 +34,72 @@ const HeroSection2 = () => {
   ];
 
   return (
-    <section className="pt-6 pb-5 px-10 flex flex-col gap-10">
-      <hr className="border-[#322418] border-[1.5px]" />
+    <section className="max-[481px]:px-3 max-[481px]:py-5 pt-6 pb-5 px-10 flex flex-col gap-10">
+      <hr className="border-[#667085] border" />
 
-      <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
-        DEEP DIVE
-      </h2>
+      <div className="flex flex-col gap-5">
+        <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
+          DEEP DIVE
+        </h2>
 
-      <div className="flex flex-col gap-10">
-        {list.map((data) => (
-          <div key={data.id} className="h-62.25 overflow-clip flex gap-6">
-            <div className="max-w-125.75 h-full">
-              <img
-                src={data.img}
-                alt="A picture of someone singing into a mike"
-                className={`flex-1 ${data.id % 2 === 0 ? "-mt-15" : "-mt-30"}`}
-              />
-            </div>
-
+        <div className="flex flex-col gap-10">
+          {list.map((data) => (
             <div
-              className={`flex flex-col h-full justify-between max-w-208.25`}
+              key={data.id}
+              className="max-[481px]:flex-col min-[481px]:h-62.25 overflow-clip flex gap-6"
             >
-              <div className="flex flex-col gap-2 h-full">
-                <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] text-sm">
-                  {data.topic}
-                </h3>
-
-                <h4 className="text-[#252324] text-2xl leading-[100%] font-helvetica font-medium">
-                  {data.header}
-                </h4>
-
-                <p className="text-[#344054] font-helvetica font-light text-lg leading-7">
-                  {data.desc}
-                </p>
+              <div className="max-[481px]:h-49.25 overflow-hidden max-w-125.75 h-full">
+                <img
+                  src={data.img}
+                  alt="A picture of someone singing into a mike"
+                  className={`flex-1 ${data.id % 2 === 0 ? "-mt-15" : "-mt-30"}`}
+                />
               </div>
 
-              <p className="text-[#6C6263] font-helvetica font-normal text-sm leading-6 flex items-center gap-2">
-                {data.owner.split(" ")[0]}
-                <span className="underline cursor-pointer">
-                  {data.owner.split(" ")[1]} {data.owner.split(" ")[2]}{" "}
-                  {data.owner.split(" ")[3]}
-                </span>
-              </p>
+              <div
+                className={`flex flex-col h-full max-[481px]:gap-2 justify-between max-w-208.25`}
+              >
+                <div className="flex flex-col gap-2 h-full">
+                  <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] max-[481px]:text-xs text-sm">
+                    {data.topic}
+                  </h3>
+
+                  <h4 className="text-[#252324] max-[481px]:text-xl max-[481px]:tracking-[-1px] text-2xl leading-[100%] font-helvetica font-medium">
+                    {data.header}
+                  </h4>
+
+                  <p className="text-[#344054] font-helvetica font-light text-lg leading-7">
+                    {data.desc}
+                  </p>
+                </div>
+
+                <p className="text-[#6C6263] font-helvetica font-normal text-sm leading-6 flex items-center gap-2">
+                  {data.owner.split(" ")[0]}
+                  <span className="underline cursor-pointer">
+                    {data.owner.split(" ")[1]} {data.owner.split(" ")[2]}{" "}
+                    {data.owner.split(" ")[3]}
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      <button className="self-center w-fit bg-[#0C111D] text-white font-helvetica font-medium leading-6 flex items-center gap-2 py-4 px-5">
+      <button className="self-center w-fit bg-[#0C111D] text-white max-[481px]:text-sm font-helvetica font-medium leading-6 flex items-center gap-2 max-[481px]:py-2 max-[481px]:px-3.5 py-4 px-5">
         LOAD MORE{" "}
         <span>
           <IoMdArrowRoundDown size={20} />
         </span>
       </button>
 
-      <hr className="border-[#322418] border-[1.5px]" />
+      <hr className="border-[#667085] border" />
 
-      <div className="max-h-62.75 max-w-255.5 w-full overflow-hidden h-full self-center">
+      <div className="max-[481px]:max-h-24 max-[481px]:max-w-75.75 max-h-62.75 max-w-255.5 w-full overflow-hidden h-full self-center">
         <img
           src={heroSection2Pic4}
           alt="A picture of pumas' logo"
-          className="object-cover -mt-77"
+          className="object-cover max-[481px]:-mt-22 min-[481px]:-mt-77"
         />
       </div>
     </section>

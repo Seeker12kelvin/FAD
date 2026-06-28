@@ -16,10 +16,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-black text-white py-2 px-6 flex justify-between items-center mx-10">
+    <header className="bg-black text-white py-2 px-6 flex justify-between items-center max-[768px]:m-3 mx-10">
       <RiMenu2Line size={20} />
 
-      <nav className="w-fit h-full">
+      <nav className="w-fit h-full max-[768px]:hidden">
         <ul className="w-fit h-full flex items-center gap-4">
           {navList.map((item) => (
             <li

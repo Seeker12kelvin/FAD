@@ -72,20 +72,20 @@ const HeroSection5 = () => {
   ];
 
   return (
-    <section className="flex flex-col items-end gap-16 p-10">
-      <hr className="border-[#322418] border-t-[1.5px] w-full" />
+    <section className="flex flex-col max-[481px]:items-start min-[481px]:items-end gap-16 max-[481px]:px-3 max-[481px]:py-5 p-10">
+      <hr className="border-[#322418] border-t-[1.5px] w-full max-[481px]:hidden" />
 
-      <div className="flex gap-6 items-end h-170">
+      <div className="max-[481px]:w-full flex max-[481px]:flex-col max-[481px]:gap-10 gap-6 max-[481px]:items-start items-end max-[481px]:min-h-170 min-[481px]:h-170">
         <div className="flex flex-col gap-6 justify-end h-full">
           <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
             QUICK RECAP
           </h2>
 
-          <ol className="list-decimal pl-4.5 space-y-2 max-w-81.25 flex flex-col gap-6">
+          <ol className="list-decimal pl-4.5 space-y-2 min-[481px]:max-w-81.25 flex flex-col gap-6">
             {questions.map((data) => (
               <li
                 key={data.id}
-                className="text-lg text-[#252324] tracking-[-1px] font-medium font-helvetica leading-6 pb-3 border-b-[#585051] border-b-[0.3px]"
+                className={`text-lg text-[#252324] tracking-[-1px] font-medium font-helvetica leading-6 ${questions.length === data.id ? "min-[481px]:pb-3 min-[481px]:border-b-[#585051] min-[481px]:border-b-[0.3px]" : "pb-3 border-b-[#585051] border-b-[0.3px]"}`}
               >
                 {data.text}
               </li>
@@ -93,18 +93,20 @@ const HeroSection5 = () => {
           </ol>
         </div>
 
-        <div className="flex flex-col justify-between h-full">
-          <div className="h-85 flex gap-6">
-            <div className="flex-1 bg-[#98A2B3] w-[0.2px]" />
-            <div className="flex flex-col gap-6 max-w-114.75">
+        <hr className="border-[#98A2B3] border-t w-full min-[481px]:hidden" />
+
+        <div className="flex flex-col max-[481px]:gap-10 justify-between h-full max-[481px]:w-full">
+          <div className="h-85 flex gap-6 max-[481px]:w-full">
+            <div className="flex-1 bg-[#98A2B3] w-[0.2px] max-[481px]:hidden" />
+            <div className="flex flex-col gap-6 max-[481px]:w-full min-[481px]:max-w-114.75">
               <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
                 FIELD NOTES
               </h2>
-              <div className="flex gap-6">
+              <div className="flex gap-6 max-[481px]:w-full max-[481px]:justify-between">
                 {listOne.map((data) => (
                   <div
                     key={data.id}
-                    className="flex flex-col gap-2 w-[217.5px] max-h-72.5"
+                    className="flex flex-col gap-2 max-[481px]:min-w-[163.5px] max-[481px]:min-h-72.5 min-[481px]:w-[217.5px] min-[481px]:max-h-72.5"
                   >
                     <img
                       src={data.img}
@@ -113,11 +115,11 @@ const HeroSection5 = () => {
                     />
 
                     <div className="flex flex-col gap-1">
-                      <h3 className="font-medium font-helvetica leading-6.5 tracking-[-1px] text-[#252324] text-xl">
+                      <h3 className="font-medium font-helvetica max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] text-[#252324] max-[481px]:text-[16px] text-xl">
                         {data.header}
                       </h3>
 
-                      <p className="text-[#6C6263] font-helvetica font-normal text-sm leading-6">
+                      <p className="text-[#6C6263] font-helvetica font-normal max-[481px]:text-xs text-sm max-[481px]:leading-5 leading-6">
                         {data.desc}
                       </p>
                     </div>
@@ -125,35 +127,37 @@ const HeroSection5 = () => {
                 ))}
               </div>
             </div>
-            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px]" />
+            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px] max-[481px]:hidden" />
           </div>
 
           <div className="flex gap-6 h-75">
-            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px]" />
-            <div className="flex flex-col gap-2 w-114.75 max-h-72.5">
+            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px] max-[481px]:hidden" />
+            <div className="flex flex-col gap-2 max-[481px]:w-full min-[481px]:w-114.75 max-h-72.5">
               <img
                 src={heroSection5Pic2}
                 alt=""
-                className="w-full h-53 object-cover"
+                className="w-full max-[481px]:h-51 min-[481px]:h-53 object-cover"
               />
 
               <div className="flex flex-col gap-1">
-                <h3 className="font-medium font-helvetica leading-6.5 tracking-[-1px] text-[#252324] text-xl">
+                <h3 className="font-medium font-helvetica max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] text-[#252324] max-[481px]:text-[16px] text-xl">
                   Is Global Fashion Finally Listening to Africa — or Just
                   Watching?
                 </h3>
 
-                <p className="text-[#6C6263] font-helvetica font-normal text-sm leading-6">
+                <p className="text-[#6C6263] font-helvetica font-normal max-[481px]:text-xs text-sm max-[481px]:leading-5 leading-6">
                   Why visibility doesn’t always mean influence, and what real
                   inclusion sh...
                 </p>
               </div>
             </div>
-            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px]" />
+            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px] max-[481px]:hidden" />
           </div>
         </div>
 
-        <div className="flex flex-col justify-between h-full p-0">
+        <hr className="border-[#98A2B3] border-t w-full min-[481px]:hidden" />
+
+        <div className="flex flex-col max-[481px]:gap-10 justify-between h-full p-0">
           <div className="flex flex-col gap-6">
             <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
               PERSPECTIVE
@@ -165,18 +169,22 @@ const HeroSection5 = () => {
                   key={data.id}
                   className="w-full min-h-28.75 h-fit flex gap-2.5"
                 >
-                  <img src={data.img} alt="" className="size-25 object-cover" />
+                  <img
+                    src={data.img}
+                    alt=""
+                    className="size-25 min-h-25 max-h-25 min-w-25 max-w-25 w-full object-cover"
+                  />
 
-                  <div className="max-w-92.5 flex flex-col gap-2 border-b-[#C7C1C1] border-b-[0.3px] pb-3">
-                    <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] text-xs">
+                  <div className="w-full max-[481px]:min-w-60.25 min-[481px]:max-w-92.5 flex flex-col gap-2 border-b-[#C7C1C1] border-b-[0.3px] pb-3">
+                    <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] max-[481px]:text-[10px] text-xs">
                       {data.topic}
                     </h3>
 
-                    <h4 className="text-[#000000] text-xl leading-6.5 tracking-[-1px] font-helvetica font-medium">
+                    <h4 className="text-[#000000] max-[481px]:text-[16px] text-xl max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] font-helvetica font-medium">
                       {data.header}
                     </h4>
 
-                    <p className="text-[#000000] font-helvetica font-light text-sm leading-5">
+                    <p className="text-[#000000] font-helvetica font-light max-[481px]:text-xs text-sm leading-5">
                       {data.desc}
                     </p>
                   </div>
@@ -194,19 +202,19 @@ const HeroSection5 = () => {
                 <img
                   src={data.img}
                   alt=""
-                  className="size-25 object-cover object-top"
+                  className="size-25 min-h-25 max-h-25 min-w-25 max-w-25 w-full object-cover"
                 />
 
-                <div className="max-w-92.5 flex flex-col gap-2 border-b-[#C7C1C1] border-b-[0.3px] pb-3">
-                  <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] text-xs">
+                <div className="w-full max-[481px]:min-w-60.25 min-[481px]:max-w-92.5 flex flex-col gap-2 border-b-[#C7C1C1] border-b-[0.3px] pb-3">
+                  <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] max-[481px]:text-[10px] text-xs">
                     {data.topic}
                   </h3>
 
-                  <h4 className="text-[#000000] text-xl leading-6.5 tracking-[-1px] font-helvetica font-medium">
+                  <h4 className="text-[#000000] max-[481px]:text-[16px] text-xl max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] font-helvetica font-medium">
                     {data.header}
                   </h4>
 
-                  <p className="text-[#000000] font-helvetica font-light text-sm leading-5">
+                  <p className="text-[#000000] font-helvetica font-light max-[481px]:text-xs text-sm leading-5">
                     {data.desc}
                   </p>
                 </div>
@@ -216,7 +224,7 @@ const HeroSection5 = () => {
         </div>
       </div>
 
-      <hr className="border-[#322418] border-t-[1.5px] w-full" />
+      <hr className="border-[#322418] border-t-[1.5px] w-full max-[481px]:hidden" />
     </section>
   );
 };

@@ -49,34 +49,44 @@ const HeroSection3 = () => {
   ];
 
   return (
-    <section className="w-full px-10 flex flex-col gap-10 pb-10 overflow-x-hidden">
-      <hr className="border-[#322418] border-[1.5px]" />
-      <div className="w-full min-h-96 h-fit overflow-x-scroll no-scrollbar">
+    <section className="w-full max-[481px]:px-3 max-[481px]:py-5 px-10 flex flex-col gap-10 pb-10 overflow-x-hidden">
+      <hr className="border-[#667085] border" />
+      <div className="w-full max-[481px]:h-fit min-[481px]:min-h-96 h-fit overflow-x-scroll no-scrollbar">
         <div className="w-fit flex gap-8 items-start">
           {list.map((data) => (
             <div
               key={data.id}
-              className="flex flex-col gap-2 w-144.25 pb-4 border-b-[0.5px] border-b-[#8D8382]"
+              className="flex flex-col max-[481px]:justify-between max-[481px]:min-h-60.5 min-[481px]:gap-2 max-[481px]:w-59.5 min-[481px]:w-144.25 max-[481px]:pb-1 min-[481px]:pb-4 border-b-[0.5px] border-b-[#8D8382]"
             >
-              <img src={data.img} className="object-cover w-full h-62.25" />
+              <img
+                src={data.img}
+                className="object-cover w-full max-[481px]:h-26.5 min-[481px]:h-62.25"
+              />
 
-              <div className="flex flex-col gap-1">
-                <h3 className="text-[#252324] text-lg leading-[100%] tracking-[-1px] font-helvetica font-medium">
+              <div className="flex flex-col min-[481px]:gap-1">
+                <h3 className="text-[#252324] max-[481px]:text-[16px] text-lg leading-[100%] tracking-[-1px] font-helvetica font-medium">
                   {data.topic}
                 </h3>
 
-                <h4 className="text-[#6C6263] font-helvetica font-light text-sm leading-6 tracking-[-0.17px]">
+                <h4 className="max-[481px]:hidden text-[#6C6263] font-helvetica font-light max-[481px]:text-xs text-sm max-[481px]:leading-5 leading-6 tracking-[-0.17px]">
                   {data.header}
+                </h4>
+
+                <h4 className="min-[481px]:hidden text-[#6C6263] font-helvetica font-light max-[481px]:text-xs text-sm max-[481px]:leading-5 leading-6 tracking-[-0.17px]">
+                  The designers, models, and photographers to watch this
+                  year.The designers, models, and photographers to watch this
+                  year.
                 </h4>
               </div>
 
-              <p className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] text-sm">
+              <p className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] max-[481px]:text-[10px] text-sm">
                 {data.desc}
               </p>
             </div>
           ))}
         </div>
       </div>
+      <hr className="border-[#667085] border" />
     </section>
   );
 };
