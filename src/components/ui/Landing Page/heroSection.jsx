@@ -35,30 +35,33 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="h-fit max-[481px]:px-3 max-[481px]:py-5 px-10 py-6 gap-2.5">
-      <div className="min-h-202.25 h-fit flex max-[481px]:flex-col gap-6 max-[481px]:pb-10 pb-16 border-[#322418] border-b-[1.5px]">
-        <div className="border-[#5E4630] border-[0.5px] max-[481px]:hidden" />
+    <section className="h-fit max-[1024px]:px-3 max-[1024px]:py-5 px-10 py-6 gap-2.5">
+      <div className="min-h-202.25 h-fit flex max-[768px]:flex-col gap-6 max-[768px]:pb-10 pb-16 border-[#322418] border-b-[1.5px]">
+        <div className="border-[#5E4630] border-[0.5px] max-[768px]:hidden" />
 
-        <div className="max-[481px]:gap-4 max-w-238 h-full flex flex-col justify-start gap-2 pt-2">
-          <h1 className="max-[481px]:text-2xl max-[481px]:tracking-[-2%] text-5xl font-ivy font-medium w-fit tracking-[-0.079%] leading-[100%]">
-            From Representation to Ownership: Why African Creatives are no
-            Longer Settling for Just Visibility
-          </h1>
+        <div className="max-[768px]:gap-4 max-w-238 h-full flex flex-col justify-start gap-2 pt-2">
+          <div className="w-full @container h-fit">
+            <h1 className="max-[481px]:text-2xl max-[888px]:text-[5.7cqw] text-[5.12cqw] max-[768px]:tracking-[-2%] font-ivy font-medium w-full tracking-[-0.75%] leading-[100%]">
+              From Representation to Ownership: Why African Creatives are no
+              Longer Settling for Just Visibility
+            </h1>
+          </div>
 
-          {/* <h1 className="max-[481px]:text-2xl max-[481px]:hidden max-[481px]:leading-[100%] max-[481px]:tracking-[-2%] text-5xl font-ivy font-medium w-full tracking-[-0.8%] leading-[100%]">
-            Creatives are no Longer Settling for Just Visibility
-          </h1> */}
-
-          <div className="max-h-168.25 overflow-hidden">
+          {/* <div className="min-[768px]:hidden max-[1024px]:hidden  max-h-168.25 overflow-hidden">
             <img
               src={heroSectionPic1}
               alt="A man sitting and posing for a picture"
               className="object-cover w-full -mt-20"
             />
-          </div>
+          </div> */}
 
-          <p className="font-normal font-helvetica max-[481px]:text-[16px] text-lg leading-7 tracking-[-1px]">
-            <span className="uppercase font-medium max-[481px]:text-lg max-[481px]:tracking-[-1%] max-[481px]:leading-6">
+          <div
+            style={{ backgroundImage: `url(${heroSectionPic1})` }}
+            className="min-h-168.25 overflow-hidden bg-cover bg-no-repeat lg:bg-top max-lg:bg-center"
+          ></div>
+
+          <p className="font-normal font-helvetica max-[768px]:text-[16px] text-lg leading-7 tracking-[-1px]">
+            <span className="uppercase font-medium max-[768px]:text-lg max-[768px]:tracking-[-1%] max-[768px]:leading-6">
               TODAY IN FOCUS:
             </span>{" "}
             From Lagos to Paris, African designers, models, and tastemakers are
@@ -68,14 +71,14 @@ const HeroSection = () => {
 
         <div className="border-[#5E4630] border-[0.5px]" />
 
-        <div className="flex flex-col gap-6 min-[481px]:max-w-84">
-          <div className="border-[#322418] border-b-[1.5px] pb-2 max-[481px]:w-full">
+        <div className="flex flex-col gap-6 min-[768px]:max-w-84">
+          <div className="border-[#322418] border-b-[1.5px] pb-2 max-[768px]:w-full">
             <h2 className="font-bold font-helvetica leading-[100%]">
               HEADLINES
             </h2>
           </div>
 
-          <div className="flex flex-col max-[481px]:gap-8">
+          <div className="flex flex-col gap-8">
             {list.map((data) => (
               <div
                 key={data.id}

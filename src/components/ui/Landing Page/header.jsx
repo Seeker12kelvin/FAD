@@ -1,5 +1,5 @@
+import MenuBtn from "./menuBtn";
 import { CiSearch } from "react-icons/ci";
-import { RiMenu2Line } from "react-icons/ri";
 
 const Header = () => {
   const navList = [
@@ -16,10 +16,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-black text-white py-2 px-6 flex justify-between items-center max-[768px]:m-3 mx-10">
-      <RiMenu2Line size={20} />
+    <header className="bg-black text-white py-2 px-6 flex justify-between items-center max-[1024px]:m-3 mx-10">
+      <MenuBtn />
 
-      <nav className="w-fit h-full max-[768px]:hidden">
+      <nav className="w-fit h-full max-[1024px]:hidden">
         <ul className="w-fit h-full flex items-center gap-4">
           {navList.map((item) => (
             <li

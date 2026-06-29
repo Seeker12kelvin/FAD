@@ -75,17 +75,42 @@ const HeroSection5 = () => {
     <section className="flex flex-col max-[481px]:items-start min-[481px]:items-end gap-16 max-[481px]:px-3 max-[481px]:py-5 p-10">
       <hr className="border-[#322418] border-t-[1.5px] w-full max-[481px]:hidden" />
 
-      <div className="max-[481px]:w-full flex max-[481px]:flex-col max-[481px]:gap-10 gap-6 max-[481px]:items-start items-end max-[481px]:min-h-170 min-[481px]:h-170">
-        <div className="flex flex-col gap-6 justify-end h-full">
-          <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
+      <div className="max-[481px]:w-full flex max-[1300px]:flex-wrap max-[1300px]:justify-between max-[481px]:flex-col max-[1030px]:gap-10 gap-6 max-[481px]:items-start items-end max-[481px]:min-h-170 min-[1300px]:h-170">
+        <div className="flex flex-col gap-5 lg:gap-6 w-full">
+          <h2 className="w-fit border-b-2 border-[#322418] pb-1 font-helvetica font-medium tracking-[-1%] text-[#322418]">
             QUICK RECAP
           </h2>
 
-          <ol className="list-decimal pl-4.5 space-y-2 min-[481px]:max-w-81.25 flex flex-col gap-6">
+          <ol
+            className="
+      list-decimal
+      pl-5
+      flex
+      flex-col
+      gap-4
+      lg:gap-5
+      xl:gap-6
+
+      xl:max-w-[325px]
+    "
+          >
             {questions.map((data) => (
               <li
                 key={data.id}
-                className={`text-lg text-[#252324] tracking-[-1px] font-medium font-helvetica leading-6 ${questions.length === data.id ? "min-[481px]:pb-3 min-[481px]:border-b-[#585051] min-[481px]:border-b-[0.3px]" : "pb-3 border-b-[#585051] border-b-[0.3px]"}`}
+                className={`
+          ${questions.length === data.id ? "" : "border-b border-[#585051] pb-3"}
+
+          text-base
+          sm:text-[17px]
+          xl:text-lg
+
+          leading-6
+          tracking-[-1px]
+
+          font-medium
+          font-helvetica
+          text-[#252324]
+        `}
               >
                 {data.text}
               </li>
@@ -95,96 +120,59 @@ const HeroSection5 = () => {
 
         <hr className="border-[#98A2B3] border-t w-full min-[481px]:hidden" />
 
-        <div className="flex flex-col max-[481px]:gap-10 justify-between h-full max-[481px]:w-full">
-          <div className="h-85 flex gap-6 max-[481px]:w-full">
-            <div className="flex-1 bg-[#98A2B3] w-[0.2px] max-[481px]:hidden" />
-            <div className="flex flex-col gap-6 max-[481px]:w-full min-[481px]:max-w-114.75">
-              <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
-                FIELD NOTES
-              </h2>
-              <div className="flex gap-6 max-[481px]:w-full max-[481px]:justify-between">
-                {listOne.map((data) => (
-                  <div
-                    key={data.id}
-                    className="flex flex-col gap-2 max-[481px]:min-w-[163.5px] max-[481px]:min-h-72.5 min-[481px]:w-[217.5px] min-[481px]:max-h-72.5"
-                  >
-                    <img
-                      src={data.img}
-                      alt=""
-                      className="w-full h-38.5 object-cover"
-                    />
-
-                    <div className="flex flex-col gap-1">
-                      <h3 className="font-medium font-helvetica max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] text-[#252324] max-[481px]:text-[16px] text-xl">
-                        {data.header}
-                      </h3>
-
-                      <p className="text-[#6C6263] font-helvetica font-normal max-[481px]:text-xs text-sm max-[481px]:leading-5 leading-6">
-                        {data.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px] max-[481px]:hidden" />
-          </div>
-
-          <div className="flex gap-6 h-75">
-            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px] max-[481px]:hidden" />
-            <div className="flex flex-col gap-2 max-[481px]:w-full min-[481px]:w-114.75 max-h-72.5">
-              <img
-                src={heroSection5Pic2}
-                alt=""
-                className="w-full max-[481px]:h-51 min-[481px]:h-53 object-cover"
-              />
-
-              <div className="flex flex-col gap-1">
-                <h3 className="font-medium font-helvetica max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] text-[#252324] max-[481px]:text-[16px] text-xl">
-                  Is Global Fashion Finally Listening to Africa — or Just
-                  Watching?
-                </h3>
-
-                <p className="text-[#6C6263] font-helvetica font-normal max-[481px]:text-xs text-sm max-[481px]:leading-5 leading-6">
-                  Why visibility doesn’t always mean influence, and what real
-                  inclusion sh...
-                </p>
-              </div>
-            </div>
-            <div className="flex-1 bg-[#98A2B3] max-w-[0.2px] max-[481px]:hidden" />
-          </div>
-        </div>
-
-        <hr className="border-[#98A2B3] border-t w-full min-[481px]:hidden" />
-
-        <div className="flex flex-col max-[481px]:gap-10 justify-between h-full p-0">
+        <div className="flex flex-col gap-10 w-full">
+          {/* FIELD NOTES */}
           <div className="flex flex-col gap-6">
-            <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
-              PERSPECTIVE
+            <h2 className="font-helvetica font-medium tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
+              FIELD NOTES
             </h2>
 
-            <div className="flex flex-col gap-8 h-full py-5">
-              {listTwo.slice(0, 2).map((data) => (
-                <div
-                  key={data.id}
-                  className="w-full min-h-28.75 h-fit flex gap-2.5"
-                >
+            <div
+              className="
+        grid
+        grid-cols-1
+        min-[481px]:grid-cols-2
+        gap-6
+      "
+            >
+              {listOne.map((data) => (
+                <div key={data.id} className="flex flex-col gap-3">
                   <img
                     src={data.img}
                     alt=""
-                    className="size-25 min-h-25 max-h-25 min-w-25 max-w-25 w-full object-cover"
+                    className="
+              w-full
+              h-44
+              sm:h-52
+              lg:h-60
+              object-cover
+            "
                   />
 
-                  <div className="w-full max-[481px]:min-w-60.25 min-[481px]:max-w-92.5 flex flex-col gap-2 border-b-[#C7C1C1] border-b-[0.3px] pb-3">
-                    <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] max-[481px]:text-[10px] text-xs">
-                      {data.topic}
+                  <div className="flex flex-col gap-2">
+                    <h3
+                      className="
+                text-lg
+                lg:text-xl
+                leading-tight
+                tracking-[-1px]
+                font-medium
+                font-helvetica
+                text-[#252324]
+              "
+                    >
+                      {data.header}
                     </h3>
 
-                    <h4 className="text-[#000000] max-[481px]:text-[16px] text-xl max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] font-helvetica font-medium">
-                      {data.header}
-                    </h4>
-
-                    <p className="text-[#000000] font-helvetica font-light max-[481px]:text-xs text-sm leading-5">
+                    <p
+                      className="
+                text-sm
+                leading-6
+                font-normal
+                font-helvetica
+                text-[#6C6263]
+              "
+                    >
                       {data.desc}
                     </p>
                   </div>
@@ -193,28 +181,100 @@ const HeroSection5 = () => {
             </div>
           </div>
 
-          <div className="flex flex-col justify-end gap-8 h-full">
-            {listTwo.slice(-2).map((data) => (
-              <div
-                key={data.id}
-                className="w-full min-h-28.75 h-fit flex gap-2.5"
+          {/* FEATURED ARTICLE */}
+          <div className="flex flex-col gap-3">
+            <img
+              src={heroSection5Pic2}
+              alt=""
+              className="
+        w-full
+        h-56
+        sm:h-72
+        lg:h-80
+        object-cover
+      "
+            />
+
+            <div className="flex flex-col gap-2">
+              <h3
+                className="
+          text-lg
+          lg:text-xl
+          leading-tight
+          tracking-[-1px]
+          font-medium
+          font-helvetica
+          text-[#252324]
+        "
               >
+                Is Global Fashion Finally Listening to Africa — or Just
+                Watching?
+              </h3>
+
+              <p
+                className="
+          text-sm
+          leading-6
+          font-normal
+          font-helvetica
+          text-[#6C6263]
+        "
+              >
+                Why visibility doesn’t always mean influence, and what real
+                inclusion should look like.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr className="border-[#98A2B3] border-t w-full min-[481px]:hidden" />
+
+        <div className="flex flex-col gap-10 w-full h-full">
+          <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
+            PERSPECTIVE
+          </h2>
+
+          <div
+            className="
+      flex flex-col gap-8
+
+      min-[768px]:grid
+      min-[768px]:grid-cols-2
+      min-[768px]:gap-6
+
+      min-[1300px]:flex
+      min-[1300px]:flex-col
+    "
+          >
+            {listTwo.map((data) => (
+              <div key={data.id} className="flex gap-3">
                 <img
                   src={data.img}
                   alt=""
-                  className="size-25 min-h-25 max-h-25 min-w-25 max-w-25 w-full object-cover"
+                  className="
+            w-20 h-20
+
+            min-[768px]:w-24
+            min-[768px]:h-24
+
+            xl:w-25
+            xl:h-25
+
+            object-cover
+            shrink-0
+          "
                 />
 
-                <div className="w-full max-[481px]:min-w-60.25 min-[481px]:max-w-92.5 flex flex-col gap-2 border-b-[#C7C1C1] border-b-[0.3px] pb-3">
-                  <h3 className="font-bold font-helvetica leading-[100%] uppercase text-[#8D8382] max-[481px]:text-[10px] text-xs">
+                <div className="flex flex-col gap-2 border-b border-[#C7C1C1] pb-3 flex-1">
+                  <h3 className="uppercase text-[#8D8382] font-bold font-helvetica text-[10px] xl:text-xs">
                     {data.topic}
                   </h3>
 
-                  <h4 className="text-[#000000] max-[481px]:text-[16px] text-xl max-[481px]:leading-5.5 leading-6.5 tracking-[-1px] font-helvetica font-medium">
+                  <h4 className="font-helvetica font-medium text-base md:text-lg xl:text-xl leading-tight tracking-[-1px] text-[#000]">
                     {data.header}
                   </h4>
 
-                  <p className="text-[#000000] font-helvetica font-light max-[481px]:text-xs text-sm leading-5">
+                  <p className="font-helvetica font-light text-xs md:text-sm leading-5 text-[#000]">
                     {data.desc}
                   </p>
                 </div>

@@ -1,9 +1,9 @@
 const SignUpSection = () => {
   return (
-    <section className="min-h-48.5 h-fit bg-[#000000] flex items-center max-[481px]:justify-center justify-between max-[481px]:px-3 max-[481px]:py-6 py-15 px-10">
+    <section className="min-h-48.5 h-fit bg-[#000000] flex items-center max-[481px]:justify-center justify-between max-[481px]:px-3 max-[481px]:py-6 max-[901px]:px-5 max-[901px]:py-8 py-15 px-10">
       <div className="w-full max-[481px]:min-h-18.5 min-[481px]:h-18.5 flex max-[481px]:flex-col gap-8 items-center px-4">
         <div className="max-w-180.25 w-full flex flex-col gap-2">
-          <h2 className="max-[481px]:text-xl max-[481px]:leading-[100%] text-4xl text-[#FFFFFF] font-ivy leading-11 font-medium tracking-[-2%]">
+          <h2 className="max-[481px]:text-xl max-[850px]:text-3xl max-[481px]:leading-[100%] text-4xl text-[#FFFFFF] font-ivy leading-11 font-medium tracking-[-2%]">
             Sign up for our newsletter
           </h2>
           <p className="text-[#EAECF0] max-[481px]:text-sm text-lg font-helvetica font-light leading-[100%]">

@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import logo from "../../assets/images/logo.png";
 import Main from "../../components/ui/Landing Page/main";
 import firstPic from "../../assets/images/landingPic1.png";
+import { UserContext } from "../../components/context/user";
 import Footer from "../../components/ui/Landing Page/footer";
 import Header from "../../components/ui/Landing Page/header";
+import MobileMenu from "../../components/ui/Landing Page/mobileMenu";
 
 const LandingPage = () => {
+  const { menu } = useContext(UserContext);
+
   return (
     <>
       <div className="flex flex-col">
@@ -33,6 +38,7 @@ const LandingPage = () => {
         </div>
       </div>
       <Header />
+      {menu && <MobileMenu />}
       <Main />
       <Footer />
     </>
