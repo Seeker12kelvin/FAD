@@ -7,7 +7,7 @@ const MenuBtn = () => {
 
   return (
     <button
-      className="min-[966px]:hidden text-white"
+      className="text-white"
       onClick={() => {
         setMenu(true);
         console.log(true);

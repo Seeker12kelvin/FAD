@@ -47,7 +47,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="min-[481px]:min-h-100.25 h-fit bg-[#000000] flex flex-col justify-between pt-20 max-[481px]:px-6 max-[481px]:pb-0 p-14">
+    <footer className="min-[481px]:min-h-180.25 h-fit bg-[#000000] flex flex-col justify-between pt-20 max-[481px]:px-6 max-[481px]:pb-0 p-14">
       <div className="min-h-100.5 h-fit flex max-[900px]:flex-col max-[900px]:gap-4 justify-between w-full">
         <div className="max-[900px]:self-start min-[900px]:self-end flex flex-col gap-4">
           <img src={logo} alt="Logo" className="h-25 w-40 object-cover" />

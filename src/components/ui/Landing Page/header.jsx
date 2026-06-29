@@ -16,23 +16,25 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-black text-white py-2 px-6 flex justify-between items-center max-[1024px]:m-3 mx-10">
-      <MenuBtn />
+    <header className="sticky top-0 h-20 w-full bg-[white] flex justify-center items-center">
+      <div className="w-full bg-black text-white py-2 px-6 flex justify-between items-center max-[1024px]:m-3 mx-10">
+        <MenuBtn />
 
-      <nav className="w-fit h-full max-[1024px]:hidden">
-        <ul className="w-fit h-full flex items-center gap-4">
-          {navList.map((item) => (
-            <li
-              key={item.id}
-              className="uppercase font-helvetica font-bold text-xs leading-[100%]"
-            >
-              <a>{item.name}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+        <nav className="w-fit h-full max-[1024px]:hidden">
+          <ul className="w-fit h-full flex items-center gap-4">
+            {navList.map((item) => (
+              <li
+                key={item.id}
+                className="uppercase font-helvetica font-bold text-xs leading-[100%]"
+              >
+                <a>{item.name}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-      <CiSearch size={24} />
+        <CiSearch size={24} />
+      </div>
     </header>
   );
 };

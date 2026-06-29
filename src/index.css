@@ -58,7 +58,12 @@
 }
 
 body {
+  margin: 0px;
+  padding: 0px;
   overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  height: fit-content;
 }
 
 @layer utilities {
