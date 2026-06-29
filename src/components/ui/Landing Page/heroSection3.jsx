@@ -49,7 +49,7 @@ const HeroSection3 = () => {
   ];
 
   return (
-    <section className="w-full max-[481px]:px-3 max-[481px]:py-5 px-10 flex flex-col gap-10 pb-10 overflow-x-hidden">
+    <section className="w-full max-[768px]:px-3 max-[768px]:pb-5 min-[769px]:max-[1200px]:px-6 px-10 flex flex-col gap-10 pb-10 overflow-x-hidden">
       <hr className="border-[#667085] border" />
       <div className="w-full max-[481px]:h-fit min-[481px]:min-h-96 h-fit overflow-x-scroll no-scrollbar">
         <div className="w-fit flex gap-8 items-start">

@@ -58,7 +58,7 @@ const HeroSection2 = () => {
                   sm:min-w-65
                   sm:h-55
 
-                  xl:max-w-125.75
+                  xl:w-125.75
                   xl:h-62.25
 
                   overflow-hidden

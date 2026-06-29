@@ -35,7 +35,7 @@ const FadEditSection = () => {
         THE FAD EDIT
       </h2>
 
-      <div className="flex max-[768px]:flex-col min-[769px]:max-[1200px]:grid min-[769px]:max-[1200px]:grid-cols-2 xl:flex gap-6">
+      <div className="flex max-[768px]:flex-col min-[769px]:max-[1200px]:grid min-[769px]:max-[1200px]:grid-cols-2 justify-between gap-6">
         {editList.map((data) => (
           <div
             key={data.id}
