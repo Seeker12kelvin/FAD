@@ -195,7 +195,7 @@ const HeroSection5 = () => {
             </div>
           </div>
 
-          <div className="flex max-[481px]:flex-col max-[1019px]:flex-col max-[1300px]:justify-between min-[1300px]:justify-end gap-8 w-full h-full">
+          <div className="flex flex-col max-[1300px]:justify-between min-[1300px]:justify-end gap-8 w-full h-full">
             {listTwo.slice(-2).map((data) => (
               <div
                 key={data.id}

@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 h-20 w-full bg-[white] flex justify-center items-center">
+    <header className="sticky top-0 h-20 w-full bg-[white] flex justify-center items-center z-100">
       <div className="w-full bg-black text-white py-2 px-6 flex justify-between items-center max-[1024px]:m-3 mx-10">
         <MenuBtn />
 
