@@ -6,33 +6,33 @@ import heroSection2Pic4 from "../../../assets/images/heroSection2Pic4.jpg";
 import { useEffect, useState } from "react";
 
 const HeroSection2 = () => {
-  // const list = [
-  //   {
-  //     id: 1,
-  //     img: heroSection2Pic1,
-  //     topic: "Sustainability",
-  //     header:
-  //       "Sustainability Isn’t New — Africa Has Been Doing It for Generations",
-  //     desc: "Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture. Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture.",
-  //     owner: "By Obi Hauwa Efiong",
-  //   },
-  //   {
-  //     id: 2,
-  //     img: heroSection2Pic2,
-  //     topic: "Entrepreneurship",
-  //     header: "The New Fashion Moguls: Young Africans Building Global Brands",
-  //     desc: "From Instagram shops to international stockists — how digital tools are changing who wins in fashion. From Instagram shops to international stockists — how digital tools are changing who wins in fashion.",
-  //     owner: "By Obi Hauwa Efiong",
-  //   },
-  //   {
-  //     id: 3,
-  //     img: heroSection2Pic3,
-  //     topic: "Society",
-  //     header: "When Style Becomes a Social Statement",
-  //     desc: "How clothing is being used to speak on identity, politics, and belonging. How clothing is being used to speak on identity, politics, and belonging.",
-  //     owner: "By Obi Hauwa Efiong",
-  //   },
-  // ];
+  const list = [
+    {
+      id: 1,
+      img: heroSection2Pic1,
+      topic: "Sustainability",
+      header:
+        "Sustainability Isn’t New — Africa Has Been Doing It for Generations",
+      desc: "Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture. Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture.",
+      owner: "By Obi Hauwa Efiong",
+    },
+    {
+      id: 2,
+      img: heroSection2Pic2,
+      topic: "Entrepreneurship",
+      header: "The New Fashion Moguls: Young Africans Building Global Brands",
+      desc: "From Instagram shops to international stockists — how digital tools are changing who wins in fashion. From Instagram shops to international stockists — how digital tools are changing who wins in fashion.",
+      owner: "By Obi Hauwa Efiong",
+    },
+    {
+      id: 3,
+      img: heroSection2Pic3,
+      topic: "Society",
+      header: "When Style Becomes a Social Statement",
+      desc: "How clothing is being used to speak on identity, politics, and belonging. How clothing is being used to speak on identity, politics, and belonging.",
+      owner: "By Obi Hauwa Efiong",
+    },
+  ];
 
   const [blogData, setBlogData] = useState();
 
@@ -50,7 +50,7 @@ const HeroSection2 = () => {
         const json = await res.json();
 
         if (!ignore) {
-          setBlogData(json?.data ?? []);
+          setBlogData(json?.data ?? list);
         }
       } catch (err) {
         console.error(err);
@@ -97,8 +97,8 @@ const HeroSection2 = () => {
                 "
                 >
                   <img
-                    src={`${import.meta.env.VITE_STRAPI_URL}${data.img.url}`}
-                    alt={data.img.alternativeText}
+                    src={`${import.meta.env.VITE_STRAPI_URL}${data.img?.url}`}
+                    alt={data.img?.alternativeText}
                     className={`w-full h-full object-cover transition-transform duration-300`}
                   />
                 </div>
