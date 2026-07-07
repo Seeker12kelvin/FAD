@@ -3,35 +3,55 @@ import heroSection2Pic1 from "../../../assets/images/heroSection2Pic1.jpg";
 import heroSection2Pic2 from "../../../assets/images/heroSection2Pic2.jpg";
 import heroSection2Pic3 from "../../../assets/images/heroSection2Pic3.jpg";
 import heroSection2Pic4 from "../../../assets/images/heroSection2Pic4.jpg";
+import { useEffect, useState } from "react";
 
 const HeroSection2 = () => {
-  const list = [
-    {
-      id: 1,
-      img: heroSection2Pic1,
-      topic: "Sustainability",
-      header:
-        "Sustainability Isn’t New — Africa Has Been Doing It for Generations",
-      desc: "Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture. Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture.",
-      owner: "By Obi Hauwa Efiong",
-    },
-    {
-      id: 2,
-      img: heroSection2Pic2,
-      topic: "Entrepreneurship",
-      header: "The New Fashion Moguls: Young Africans Building Global Brands",
-      desc: "From Instagram shops to international stockists — how digital tools are changing who wins in fashion. From Instagram shops to international stockists — how digital tools are changing who wins in fashion.",
-      owner: "By Obi Hauwa Efiong",
-    },
-    {
-      id: 3,
-      img: heroSection2Pic3,
-      topic: "Society",
-      header: "When Style Becomes a Social Statement",
-      desc: "How clothing is being used to speak on identity, politics, and belonging. How clothing is being used to speak on identity, politics, and belonging.",
-      owner: "By Obi Hauwa Efiong",
-    },
-  ];
+  // const list = [
+  //   {
+  //     id: 1,
+  //     img: heroSection2Pic1,
+  //     topic: "Sustainability",
+  //     header:
+  //       "Sustainability Isn’t New — Africa Has Been Doing It for Generations",
+  //     desc: "Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture. Why slow fashion, reuse, and craftsmanship are deeply rooted in African culture.",
+  //     owner: "By Obi Hauwa Efiong",
+  //   },
+  //   {
+  //     id: 2,
+  //     img: heroSection2Pic2,
+  //     topic: "Entrepreneurship",
+  //     header: "The New Fashion Moguls: Young Africans Building Global Brands",
+  //     desc: "From Instagram shops to international stockists — how digital tools are changing who wins in fashion. From Instagram shops to international stockists — how digital tools are changing who wins in fashion.",
+  //     owner: "By Obi Hauwa Efiong",
+  //   },
+  //   {
+  //     id: 3,
+  //     img: heroSection2Pic3,
+  //     topic: "Society",
+  //     header: "When Style Becomes a Social Statement",
+  //     desc: "How clothing is being used to speak on identity, politics, and belonging. How clothing is being used to speak on identity, politics, and belonging.",
+  //     owner: "By Obi Hauwa Efiong",
+  //   },
+  // ];
+
+  const [blogData, setBlogData] = useState();
+
+  useEffect(() => {
+    const fetchAllBlogs = async () => {
+      try {
+        const data = await fetch(
+          "http://localhost:1337/api/deep-dive-blogs?populate=*",
+        );
+        const res = await data.json();
+
+        setBlogData(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchAllBlogs();
+  });
 
   return (
     <section className="px-3 py-5 sm:px-6 lg:px-8 xl:px-10 xl:pt-6 xl:pb-5 flex flex-col gap-10">
@@ -43,14 +63,14 @@ const HeroSection2 = () => {
         </h2>
 
         <div className="flex flex-col gap-10">
-          {list.map((data) => (
-            <div
-              key={data.id}
-              className="flex flex-col sm:flex-row gap-5 xl:gap-6 overflow-hidden"
-            >
-              {/* Image */}
+          {blogData &&
+            blogData.slice(0, 3).map((data) => (
               <div
-                className="
+                key={data.id}
+                className="flex flex-col sm:flex-row gap-5 xl:gap-6 overflow-hidden"
+              >
+                <div
+                  className="
                   w-full
                   h-49.25
 
@@ -63,39 +83,37 @@ const HeroSection2 = () => {
 
                   overflow-hidden
                 "
-              >
-                <img
-                  src={data.img}
-                  alt={data.header}
-                  className={`w-full h-full object-cover transition-transform duration-300`}
-                />
-              </div>
-
-              {/* Text */}
-              <div className="flex flex-col justify-between flex-1 gap-5">
-                <div className="flex flex-col gap-3">
-                  <h3 className="uppercase text-xs xl:text-sm font-bold font-helvetica text-[#8D8382]">
-                    {data.topic}
-                  </h3>
-
-                  <h4 className="font-helvetica font-medium text-[#252324] leading-tight text-xl sm:text-[22px] xl:text-2xl">
-                    {data.header}
-                  </h4>
-
-                  <p className="font-helvetica font-light text-[#344054] text-base xl:text-lg leading-7">
-                    {data.desc}
-                  </p>
+                >
+                  <img
+                    src={`http://localhost:1337${data.img.url}`}
+                    alt={data.img.alternativeText}
+                    className={`w-full h-full object-cover transition-transform duration-300`}
+                  />
                 </div>
 
-                <p className="flex items-center gap-2 text-[13px] xl:text-sm text-[#6C6263] font-helvetica">
-                  {data.owner.split(" ")[0]}
-                  <span className="underline cursor-pointer">
-                    {data.owner.split(" ").slice(1).join(" ")}
-                  </span>
-                </p>
+                <div className="flex flex-col justify-between flex-1 gap-5">
+                  <div className="flex flex-col gap-3">
+                    <h3 className="uppercase text-xs xl:text-sm font-bold font-helvetica text-[#8D8382]">
+                      {data.topic}
+                    </h3>
+
+                    <h4 className="font-helvetica font-medium text-[#252324] leading-tight text-xl sm:text-[22px] xl:text-2xl">
+                      {data.header}
+                    </h4>
+
+                    <p className="font-helvetica font-light text-[#344054] text-base xl:text-lg leading-7">
+                      {data.desc}
+                    </p>
+                  </div>
+
+                  <p className="flex items-center gap-2 text-[13px] xl:text-sm text-[#6C6263] font-helvetica">
+                    <span className="underline cursor-pointer">
+                      {data.owner}
+                    </span>
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
 

@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deep_dive_blogs",
+  "info": {
+    "singularName": "deep-dive-blog",
+    "pluralName": "deep-dive-blogs",
+    "displayName": "Deep Dive blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "topic": {
+      "type": "string"
+    },
+    "header": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "text"
+    },
+    "owner": {
+      "type": "string"
+    }
+  }
+}
