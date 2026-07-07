@@ -37,21 +37,33 @@ const HeroSection2 = () => {
   const [blogData, setBlogData] = useState();
 
   useEffect(() => {
+    let ignore = false;
+
     const fetchAllBlogs = async () => {
       try {
-        const data = await fetch(
-          "http://localhost:1337/api/deep-dive-blogs?populate=*",
+        const res = await fetch(
+          `${import.meta.env.VITE_STRAPI_URL}/api/deep-dive-blogs?populate=*`,
         );
-        const res = await data.json();
 
-        setBlogData(res.data);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+        const json = await res.json();
+
+        if (!ignore) {
+          setBlogData(json?.data ?? []);
+        }
       } catch (err) {
-        console.log(err);
+        console.error(err);
+        if (!ignore) setBlogData([]);
       }
     };
 
     fetchAllBlogs();
-  });
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   return (
     <section className="px-3 py-5 sm:px-6 lg:px-8 xl:px-10 xl:pt-6 xl:pb-5 flex flex-col gap-10">
@@ -85,7 +97,7 @@ const HeroSection2 = () => {
                 "
                 >
                   <img
-                    src={`http://localhost:1337${data.img.url}`}
+                    src={`${import.meta.env.VITE_STRAPI_URL}${data.img.url}`}
                     alt={data.img.alternativeText}
                     className={`w-full h-full object-cover transition-transform duration-300`}
                   />
