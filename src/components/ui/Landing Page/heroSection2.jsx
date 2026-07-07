@@ -63,7 +63,7 @@ const HeroSection2 = () => {
     return () => {
       ignore = true;
     };
-  }, []);
+  }, [list]);
 
   return (
     <section className="px-3 py-5 sm:px-6 lg:px-8 xl:px-10 xl:pt-6 xl:pb-5 flex flex-col gap-10">
