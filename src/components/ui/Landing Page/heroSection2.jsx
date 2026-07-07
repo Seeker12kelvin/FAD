@@ -75,14 +75,13 @@ const HeroSection2 = () => {
         </h2>
 
         <div className="flex flex-col gap-10">
-          {blogData
-            ? blogData.slice(0, 3).map((data) => (
-                <div
-                  key={data.id}
-                  className="flex flex-col sm:flex-row gap-5 xl:gap-6 overflow-hidden"
-                >
-                  <div
-                    className="
+          {blogData.slice(0, 3).map((data) => (
+            <div
+              key={data.id}
+              className="flex flex-col sm:flex-row gap-5 xl:gap-6 overflow-hidden"
+            >
+              <div
+                className="
                   w-full
                   h-49.25
 
@@ -95,44 +94,42 @@ const HeroSection2 = () => {
 
                   overflow-hidden
                 "
-                  >
-                    <img
-                      src={`${import.meta.env.VITE_STRAPI_URL}${data.img?.url}`}
-                      alt={data.img?.alternativeText}
-                      className={`w-full h-full object-cover transition-transform duration-300`}
-                    />
-                  </div>
+              >
+                <img
+                  src={`${import.meta.env.VITE_STRAPI_URL}${data.img?.url}`}
+                  alt={data.img?.alternativeText}
+                  className={`w-full h-full object-cover transition-transform duration-300`}
+                />
+              </div>
 
-                  <div className="flex flex-col justify-between flex-1 gap-5">
-                    <div className="flex flex-col gap-3">
-                      <h3 className="uppercase text-xs xl:text-sm font-bold font-helvetica text-[#8D8382]">
-                        {data.topic}
-                      </h3>
+              <div className="flex flex-col justify-between flex-1 gap-5">
+                <div className="flex flex-col gap-3">
+                  <h3 className="uppercase text-xs xl:text-sm font-bold font-helvetica text-[#8D8382]">
+                    {data.topic}
+                  </h3>
 
-                      <h4 className="font-helvetica font-medium text-[#252324] leading-tight text-xl sm:text-[22px] xl:text-2xl">
-                        {data.header}
-                      </h4>
+                  <h4 className="font-helvetica font-medium text-[#252324] leading-tight text-xl sm:text-[22px] xl:text-2xl">
+                    {data.header}
+                  </h4>
 
-                      <p className="font-helvetica font-light text-[#344054] text-base xl:text-lg leading-7">
-                        {data.desc}
-                      </p>
-                    </div>
-
-                    <p className="flex items-center gap-2 text-[13px] xl:text-sm text-[#6C6263] font-helvetica">
-                      <span className="underline cursor-pointer">
-                        {data.owner}
-                      </span>
-                    </p>
-                  </div>
+                  <p className="font-helvetica font-light text-[#344054] text-base xl:text-lg leading-7">
+                    {data.desc}
+                  </p>
                 </div>
-              ))
-            : list.slice(0, 3).map((data) => (
+
+                <p className="flex items-center gap-2 text-[13px] xl:text-sm text-[#6C6263] font-helvetica">
+                  <span className="underline cursor-pointer">{data.owner}</span>
+                </p>
+              </div>
+            </div>
+          )) ??
+            list.slice(0, 3).map((data) => (
+              <div
+                key={data.id}
+                className="flex flex-col sm:flex-row gap-5 xl:gap-6 overflow-hidden"
+              >
                 <div
-                  key={data.id}
-                  className="flex flex-col sm:flex-row gap-5 xl:gap-6 overflow-hidden"
-                >
-                  <div
-                    className="
+                  className="
                   w-full
                   h-49.25
 
@@ -145,37 +142,37 @@ const HeroSection2 = () => {
 
                   overflow-hidden
                 "
-                  >
-                    <img
-                      src={`${import.meta.env.VITE_STRAPI_URL}${data.img?.url}`}
-                      alt={data.img?.alternativeText}
-                      className={`w-full h-full object-cover transition-transform duration-300`}
-                    />
-                  </div>
+                >
+                  <img
+                    src={`${import.meta.env.VITE_STRAPI_URL}${data.img?.url}`}
+                    alt={data.img?.alternativeText}
+                    className={`w-full h-full object-cover transition-transform duration-300`}
+                  />
+                </div>
 
-                  <div className="flex flex-col justify-between flex-1 gap-5">
-                    <div className="flex flex-col gap-3">
-                      <h3 className="uppercase text-xs xl:text-sm font-bold font-helvetica text-[#8D8382]">
-                        {data.topic}
-                      </h3>
+                <div className="flex flex-col justify-between flex-1 gap-5">
+                  <div className="flex flex-col gap-3">
+                    <h3 className="uppercase text-xs xl:text-sm font-bold font-helvetica text-[#8D8382]">
+                      {data.topic}
+                    </h3>
 
-                      <h4 className="font-helvetica font-medium text-[#252324] leading-tight text-xl sm:text-[22px] xl:text-2xl">
-                        {data.header}
-                      </h4>
+                    <h4 className="font-helvetica font-medium text-[#252324] leading-tight text-xl sm:text-[22px] xl:text-2xl">
+                      {data.header}
+                    </h4>
 
-                      <p className="font-helvetica font-light text-[#344054] text-base xl:text-lg leading-7">
-                        {data.desc}
-                      </p>
-                    </div>
-
-                    <p className="flex items-center gap-2 text-[13px] xl:text-sm text-[#6C6263] font-helvetica">
-                      <span className="underline cursor-pointer">
-                        {data.owner}
-                      </span>
+                    <p className="font-helvetica font-light text-[#344054] text-base xl:text-lg leading-7">
+                      {data.desc}
                     </p>
                   </div>
+
+                  <p className="flex items-center gap-2 text-[13px] xl:text-sm text-[#6C6263] font-helvetica">
+                    <span className="underline cursor-pointer">
+                      {data.owner}
+                    </span>
+                  </p>
                 </div>
-              ))}
+              </div>
+            ))}
         </div>
       </div>
 
