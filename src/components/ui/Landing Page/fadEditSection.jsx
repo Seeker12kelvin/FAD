@@ -37,9 +37,10 @@ const FadEditSection = () => {
 
       <div className="flex max-[768px]:flex-col min-[769px]:max-[1200px]:grid min-[769px]:max-[1200px]:grid-cols-2 justify-between gap-6">
         {editList.map((data) => (
-          <div
-            key={data.id}
-            className={`
+          <>
+            <div
+              key={data.id}
+              className={`
               flex flex-col gap-3 h-full
               xl:max-w-[400px]
 
@@ -49,17 +50,13 @@ const FadEditSection = () => {
                   : "max-[768px]:pb-6 max-[768px]:border-b border-[#98A2B3]"
               }
 
-              ${
-                data.id === 3
-                  ? "min-[769px]:max-[1200px]:col-span-2 min-[769px]:max-[1200px]:max-w-[500px] min-[769px]:max-[1200px]:mx-auto"
-                  : ""
-              }
+              min-[769px]:max-[1200px]:col-span-2
             `}
-          >
-            <img
-              src={data.img}
-              alt={data.header}
-              className="
+            >
+              <img
+                src={data.img}
+                alt={data.header}
+                className="
                 w-full
                 object-cover
 
@@ -69,26 +66,30 @@ const FadEditSection = () => {
 
                 xl:h-[635px]
               "
-            />
+              />
 
-            <div className="flex flex-col gap-2">
-              <h3 className="max-[768px]:hidden uppercase text-[#8D8382] font-bold font-helvetica text-sm">
-                {data.topic}
-              </h3>
+              <div className="flex flex-col gap-2">
+                <h3 className="max-[768px]:hidden uppercase text-[#8D8382] font-bold font-helvetica text-sm">
+                  {data.topic}
+                </h3>
 
-              <h4 className="text-[#252324] font-helvetica font-medium text-lg min-[769px]:max-[1200px]:text-xl leading-tight">
-                {data.header}
-              </h4>
+                <h4 className="text-[#252324] font-helvetica font-medium text-lg min-[769px]:max-[1200px]:text-xl leading-tight">
+                  {data.header}
+                </h4>
 
-              <p className="text-[#6C6263] font-helvetica font-light text-sm leading-6 tracking-[-0.17px]">
-                {data.desc}
-              </p>
+                <p className="text-[#6C6263] font-helvetica font-light text-sm leading-6 tracking-[-0.17px]">
+                  {data.desc}
+                </p>
 
-              <p className="min-[769px]:hidden text-sm text-[#A69F9E] leading-6 font-helvetica">
-                09 January 2026
-              </p>
+                <p className="min-[769px]:hidden text-sm text-[#A69F9E] leading-6 font-helvetica">
+                  09 January 2026
+                </p>
+              </div>
             </div>
-          </div>
+            {data.id != editList.length && (
+              <div className="border-[#98A2B3] border-l-[0.2px] max-[768px]:hidden" />
+            )}
+          </>
         ))}
       </div>
     </section>

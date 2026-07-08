@@ -37,7 +37,7 @@ const HeroSection4 = () => {
   ];
 
   return (
-    <section className="flex flex-col gap-10 max-[768px]:px-3 max-[768px]:py-5 p-10">
+    <section className="flex flex-col gap-10 max-[768px]:px-3 max-[768px]:pb-5 min-[769px]:max-[1200px]:px-6 px-10">
       <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
         FIELD NOTES
       </h2>
@@ -72,7 +72,7 @@ const HeroSection4 = () => {
           ))}
         </div>
 
-        <div className="border-[#98A2B3] border-[0.2px]" />
+        <div className="border-[#98A2B3] border-l-[0.2px]" />
 
         <div className="min-[768px]:hidden flex-1 max-[768px]:border-[#98A2B3] max-[768px]:border-[0.3px] bg-[#667085] max-[768px]:max-w-full min-[768px]:max-w-[0.5px]" />
 
@@ -81,6 +81,8 @@ const HeroSection4 = () => {
           alt=""
           className="object-cover flex-1 max-[1001px]:max-h-108 min-[1001px]:max-w-96.5"
         />
+
+        <div className="border-[#98A2B3] border-l-[0.2px]" />
       </div>
     </section>
   );

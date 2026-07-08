@@ -72,10 +72,10 @@ const HeroSection5 = () => {
   ];
 
   return (
-    <section className="flex flex-col max-[481px]:items-start min-[481px]:items-end gap-16 max-[481px]:px-3 max-[481px]:py-5 p-10">
+    <section className="flex flex-col max-[481px]:items-start min-[481px]:items-end gap-16 max-[768px]:px-3 max-[768px]:pb-5 min-[769px]:max-[1200px]:px-6 px-10">
       <hr className="border-[#322418] border-t-[1.5px] w-full max-[481px]:hidden" />
 
-      <div className="max-[481px]:w-full flex max-[1300px]:flex-wrap max-[1300px]:justify-between max-[481px]:flex-col max-[1030px]:gap-10 gap-6 max-[481px]:items-start items-end max-[1019px]:min-h-170 min-[1300px]:h-170">
+      <div className="max-[481px]:w-full flex max-[1300px]:flex-wrap max-[1300px]:gap-15 max-[1300px]:justify-between max-[481px]:flex-col max-[1030px]:gap-10 gap-6 max-[481px]:items-start items-end max-[1019px]:min-h-170 min-[1300px]:h-170">
         <div className="flex flex-col gap-6 justify-end max-[1030px]:max-w-full max-[1066px]:max-w-85 max-[1108px]:max-w-95 max-[1300px]:max-w-100 min-[1300px]:max-w-75 w-full h-full">
           <h2 className="font-helvetica font-medium leading-[100%] tracking-[-1%] text-[#322418] border-b-2 border-[#322418] pb-1 w-fit">
             QUICK RECAP
@@ -85,7 +85,7 @@ const HeroSection5 = () => {
             {questions.map((data) => (
               <li
                 key={data.id}
-                className={`text-lg text-[#252324] tracking-[-1px] font-medium font-helvetica leading-6 ${questions.length === data.id ? "min-[481px]:pb-3 min-[481px]:border-b-[#585051] min-[481px]:border-b-[0.3px]" : "pb-3 border-b-[#585051] border-b-[0.3px]"}`}
+                className={`text-lg text-[#252324] tracking-[-1px] font-medium font-helvetica leading-6 ${questions.length === data.id ? "max-xl:pb-4 max-xl:border-b-[#585051] max-xl:border-b-[0.3px]" : "pb-4 border-b-[#585051] border-b-[0.3px]"}`}
               >
                 {data.text}
               </li>
@@ -195,7 +195,7 @@ const HeroSection5 = () => {
             </div>
           </div>
 
-          <div className="flex flex-col max-[1300px]:justify-between min-[1300px]:justify-end gap-8 w-full h-full">
+          <div className="flex max-[481px]:flex-col max-[1019px]:flex-col min-[1300px]:flex-col max-[1300px]:justify-between min-[1300px]:justify-end gap-8 w-full h-full">
             {listTwo.slice(-2).map((data) => (
               <div
                 key={data.id}

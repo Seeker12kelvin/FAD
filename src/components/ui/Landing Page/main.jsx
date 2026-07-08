@@ -11,7 +11,7 @@ import FadEditSection from "./fadEditSection";
 
 const Main = () => {
   return (
-    <main className="w-full h-full overflow-hidden">
+    <main className="w-full h-full overflow-hidden flex flex-col gap-4">
       <HeroSection />
       <SignUpSection />
       <HeroSection2 />

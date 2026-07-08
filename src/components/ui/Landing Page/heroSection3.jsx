@@ -86,7 +86,6 @@ const HeroSection3 = () => {
           ))}
         </div>
       </div>
-      <hr className="border-[#667085] border" />
     </section>
   );
 };
